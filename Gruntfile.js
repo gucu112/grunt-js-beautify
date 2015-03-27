@@ -31,6 +31,7 @@ module.exports = function(grunt) {
     js_beautify: {
       default_options: {
         options: {
+          'good-stuff': true
         },
         files: {
           'tmp/default_options': ['tasks/*.js']
