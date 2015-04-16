@@ -1,7 +1,7 @@
 {
   "name": "grunt-js-beautify",
   "description": "Grunt plugin for running js-beautify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/steve/grunt-js-beautify",
   "author": {
     "name": "Steven Edouard",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/steve/grunt-js-beautify.git"
+    "url": "git://github.com/sedouard/grunt-js-beautify.git"
   },
   "bugs": {
-    "url": "https://github.com/steve/grunt-js-beautify/issues"
+    "url": "https://github.com/sedouard/grunt-js-beautify/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/steve/grunt-js-beautify/blob/master/LICENSE-MIT"
+      "url": "https://github.com/sedouard/grunt-js-beautify/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
