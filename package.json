@@ -1,8 +1,8 @@
 {
   "name": "grunt-js-beautify",
   "description": "Grunt plugin for running js-beautify",
-  "version": "0.1.3",
-  "homepage": "https://github.com/steve/grunt-js-beautify",
+  "version": "0.1.4",
+  "homepage": "https://github.com/sedouard/grunt-js-beautify",
   "author": {
     "name": "Steven Edouard",
     "email": "steven.edouard1@gmail.com"
