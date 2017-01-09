@@ -1,5 +1,7 @@
 # grunt-js-beautify
 
+**Note** Consider using [`grunt-jsbeautifier`](https://npmjs.com/grunt-jsbeautifier) instead.
+
 > Grunt plugin for running js-beautify
 
 ## Getting Started
