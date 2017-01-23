@@ -13,13 +13,11 @@ module.exports = function (grunt) {
     // Please see the Grunt documentation for more information regarding task
     // creation: http://gruntjs.com/creating-tasks
 
-
-
-
+    // Initialize path module.
+    var path = require('path');
 
     grunt.registerMultiTask('js_beautify', 'Grunt plugin for running js-beautify', function () {
         // Merge task-specific and/or target-specific options with these defaults.
-
         var options = this.options({
             "indent_size": 4,
             "indent_char": " ",
@@ -52,12 +50,34 @@ module.exports = function (grunt) {
                     return true;
                 }
             }).map(function (filepath) {
-                // Read file source.
-                var beautify = require('js-beautify').js_beautify;
-                var beautified = beautify(grunt.file.read(filepath), options);
+                // Initialize beutifiers.
+                var beautify_js = require('js-beautify');
+                var beautify_html = require('js-beautify').html;
+                var beautify_css = require('js-beautify').css;
+                // Read file source, check extension and beautify.
+                var beautified;
+                var extension = path.parse(filepath).ext.substring(1);
+                switch (extension) {
+                    case 'js':
+                    case 'json':
+                        beautified = beautify_js(grunt.file.read(filepath), options);
+                        break;
+                    case 'html':
+                        beautified = beautify_html(grunt.file.read(filepath), options);
+                        break;
+                    case 'css':
+                        beautified = beautify_css(grunt.file.read(filepath), options);
+                        break;
+                    default:
+                        grunt.log.debug('Extension "' + extension + '" not supported.');
+                        break;
+                }
+                // Write to source file.
                 grunt.file.write(filepath, beautified);
-                grunt.log.writeln('sucessfully beautified ' + filepath);
-
+                // Write message to console.
+                if (beautified !== undefined) {
+                    grunt.log.writeln('sucessfully beautified ' + filepath);
+                }
             });
         });
     });
