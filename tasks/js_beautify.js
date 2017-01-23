@@ -70,6 +70,7 @@ module.exports = function (grunt) {
                         break;
                     default:
                         grunt.log.debug('Extension "' + extension + '" not supported.');
+                        beautified = grunt.file.read(filepath);
                         break;
                 }
                 // Write to source file.
